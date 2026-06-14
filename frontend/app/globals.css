@@ -1,0 +1,215 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* ==========================================================================
+   SANATAN SHIV SHAKTI — DESIGN TOKENS
+   Palette: Saffron / Bhagwa · Deep Maroon · Gold · Cream · Dark Gray
+   ========================================================================== */
+
+:root {
+  --background: #fffaf2; /* very light warm cream */
+  --foreground: #2a2520; /* dark warm gray */
+
+  --card: #ffffff;
+  --card-foreground: #2a2520;
+  --popover: #ffffff;
+  --popover-foreground: #2a2520;
+
+  --primary: #c2410c; /* deep saffron / bhagwa (AA contrast with white) */
+  --primary-foreground: #fff7ed;
+
+  --secondary: #7a1e27; /* deep maroon */
+  --secondary-foreground: #fdf2f3;
+
+  --muted: #f6efe2;
+  --muted-foreground: #6f6457;
+
+  --accent: #a8741a; /* gold, darkened for text contrast */
+  --accent-foreground: #fffaf0;
+
+  /* decorative-only brand colors (used in gradients/borders) */
+  --gold: #c8a248;
+  --gold-soft: #e9d49a;
+  --saffron: #ea6a1e;
+  --saffron-bright: #f59324;
+  --maroon: #7a1e27;
+  --maroon-deep: #5c141b;
+
+  --destructive: #b3261e;
+  --destructive-foreground: #ffffff;
+
+  --border: #ece0cd;
+  --input: #e3d6c0;
+  --ring: #c2410c;
+
+  --radius: 0.85rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-saffron: var(--saffron);
+  --color-saffron-bright: var(--saffron-bright);
+  --color-maroon: var(--maroon);
+  --color-maroon-deep: var(--maroon-deep);
+
+  --font-sans: var(--font-inter), var(--font-noto-deva), var(--font-noto-bengali),
+    ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-marcellus), var(--font-noto-deva),
+    var(--font-noto-bengali), Georgia, "Times New Roman", serif;
+
+  --radius-sm: calc(var(--radius) - 0.35rem);
+  --radius-md: calc(var(--radius) - 0.2rem);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 0.3rem);
+
+  --animate-accordion-down: accordion-down 0.25s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-marquee: marquee 28s linear infinite;
+}
+
+@keyframes accordion-down {
+  from { height: 0; }
+  to { height: var(--radix-accordion-content-height); }
+}
+@keyframes accordion-up {
+  from { height: var(--radix-accordion-content-height); }
+  to { height: 0; }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ==========================================================================
+   BASE
+   ========================================================================== */
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 5rem; /* offset sticky navbar for anchor links */
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* Custom scrollbar (cosmetic, non-essential) */
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: var(--muted); }
+  ::-webkit-scrollbar-thumb {
+    background: color-mix(in srgb, var(--primary) 55%, transparent);
+    border-radius: 999px;
+    border: 2px solid var(--muted);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: color-mix(in srgb, var(--primary) 75%, transparent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* ==========================================================================
+   REUSABLE UTILITIES
+   ========================================================================== */
+@utility container-app {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 80rem;
+  padding-inline: 1.25rem;
+}
+
+@utility text-gradient {
+  background-image: linear-gradient(
+    100deg,
+    var(--saffron-bright),
+    var(--primary) 45%,
+    var(--maroon)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility text-gradient-gold {
+  background-image: linear-gradient(100deg, var(--gold-soft), var(--gold), #9c7a22);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Soft saffron/cream surface used by cards & sections */
+@utility surface-warm {
+  background-image: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--saffron) 7%, var(--background)),
+    var(--background)
+  );
+}
+
+/* Decorative dotted mandala-ish radial pattern */
+@utility bg-dots {
+  background-image: radial-gradient(
+    color-mix(in srgb, var(--primary) 18%, transparent) 1px,
+    transparent 1px
+  );
+  background-size: 22px 22px;
+}
+
+/* Thin animated gold ring used on hover cards */
+@utility ring-gold {
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--gold) 45%, transparent);
+}

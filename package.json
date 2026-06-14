@@ -1,0 +1,13 @@
+{
+  "name": "sanatan-shiv-shakti-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Workspace root for the Sanatan Shiv Shakti project. The website lives in /frontend; project documents live in /docs.",
+  "scripts": {
+    "dev": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "start": "npm --prefix frontend run start",
+    "lint": "npm --prefix frontend run lint",
+    "install:frontend": "npm --prefix frontend install"
+  }
+}

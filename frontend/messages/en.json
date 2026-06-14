@@ -1,0 +1,279 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "activities": "Activities",
+    "events": "Events",
+    "gallery": "Gallery",
+    "certificates": "Certificates",
+    "members": "Members",
+    "join": "Join Us",
+    "contact": "Contact",
+    "menu": "Menu",
+    "language": "Language"
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "viewAll": "View All",
+    "readMore": "Read More",
+    "viewDetails": "View Details",
+    "viewFullGallery": "View Full Gallery",
+    "getDirections": "Get Directions",
+    "callNow": "Call Now",
+    "whatsapp": "WhatsApp",
+    "sendMessage": "Send Message",
+    "joinUs": "Join Us",
+    "contactUs": "Contact Us",
+    "upcomingEvents": "Upcoming Events",
+    "close": "Close",
+    "watchVideo": "Watch Video",
+    "download": "Download",
+    "downloadPdf": "Download PDF",
+    "viewCertificate": "View Certificate",
+    "backToTop": "Back to top",
+    "loading": "Loading…",
+    "comingSoon": "Coming Soon"
+  },
+  "announcement": {
+    "label": "Announcement"
+  },
+  "home": {
+    "about": {
+      "eyebrow": "About Us",
+      "title": "Who We Are",
+      "subtitle": "A youth-led spiritual family serving society through Dharma.",
+      "vision": "Our Vision",
+      "mission": "Our Mission",
+      "cta": "Read Our Full Story"
+    },
+    "activities": {
+      "eyebrow": "What We Do",
+      "title": "Our Activities",
+      "subtitle": "Devotion, culture and service — woven into everything we do.",
+      "cta": "Explore All Activities"
+    },
+    "weekly": {
+      "eyebrow": "Weekly Satsang",
+      "title": "Every Tuesday at the Temple",
+      "subtitle": "Our spiritual heartbeat — open to all devotees.",
+      "timingLabel": "Timing",
+      "locationLabel": "Location",
+      "dayLabel": "Day"
+    },
+    "events": {
+      "eyebrow": "Events",
+      "title": "Upcoming Events",
+      "subtitle": "Join us at our next gatherings and seva drives.",
+      "cta": "View All Events",
+      "none": "New events will be announced soon. Stay tuned!"
+    },
+    "gallery": {
+      "eyebrow": "Gallery",
+      "title": "Moments of Devotion",
+      "subtitle": "Glimpses from our pujas, kirtans and seva.",
+      "cta": "View Full Gallery"
+    },
+    "certificates": {
+      "eyebrow": "Trust & Transparency",
+      "title": "Certificates & Registrations",
+      "subtitle": "Officially recognized and committed to transparency."
+    },
+    "members": {
+      "eyebrow": "Our Team",
+      "title": "The Youth Behind Sanatan Shiv Shakti",
+      "subtitle": "Dedicated volunteers leading with values."
+    },
+    "testimonials": {
+      "eyebrow": "Voices",
+      "title": "From Our Community",
+      "subtitle": "What devotees and beneficiaries say about us."
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "Frequently Asked Questions",
+      "subtitle": "Everything you need to know about Sanatan Shiv Shakti."
+    },
+    "volunteer": {
+      "title": "Become a Part of the Seva",
+      "subtitle": "Whether you can give an hour or a lifetime, there is a place for you in our family. Join the youth serving society through Dharma.",
+      "cta": "Join as Volunteer",
+      "secondary": "Talk to Us"
+    },
+    "contact": {
+      "eyebrow": "Get in Touch",
+      "title": "Visit or Reach Out",
+      "subtitle": "We would love to hear from you and welcome you to our satsang."
+    },
+    "stats": {
+      "title": "Our Impact So Far"
+    }
+  },
+  "pages": {
+    "about": {
+      "title": "About Us",
+      "subtitle": "Our story, vision and the values that guide our seva.",
+      "storyTitle": "Our Story",
+      "visionTitle": "Our Vision",
+      "missionTitle": "Our Mission",
+      "objectivesTitle": "Our Objectives",
+      "valuesTitle": "Our Core Values",
+      "whyJoinTitle": "Why Youth Should Join",
+      "culturalTitle": "Our Cultural Values",
+      "impactTitle": "Community Impact"
+    },
+    "activities": {
+      "title": "Our Activities",
+      "subtitle": "Spiritual, cultural and charitable work carried out through the year.",
+      "benefitsTitle": "Benefits",
+      "galleryTitle": "Gallery",
+      "backToActivities": "Back to Activities"
+    },
+    "events": {
+      "title": "Events",
+      "subtitle": "Our upcoming gatherings and a look back at past programs.",
+      "upcomingTitle": "Upcoming Events",
+      "pastTitle": "Past Events",
+      "noUpcoming": "No upcoming events right now. Please check back soon.",
+      "noPast": "Past events will appear here.",
+      "whenLabel": "When",
+      "whereLabel": "Where",
+      "backToEvents": "Back to Events"
+    },
+    "gallery": {
+      "title": "Gallery",
+      "subtitle": "Photos and videos from our pujas, kirtans, events and seva.",
+      "filterLabel": "Filter",
+      "noItems": "No items in this category yet."
+    },
+    "certificates": {
+      "title": "Certificates & Registrations",
+      "subtitle": "Our official recognitions and registrations.",
+      "empty": "Certificates will be published here once available.",
+      "issuedBy": "Issued by",
+      "issuedOn": "Issued on"
+    },
+    "members": {
+      "title": "Our Members",
+      "subtitle": "The dedicated youth leading Sanatan Shiv Shakti.",
+      "empty": "Our team details will be added soon.",
+      "otherTitle": "Other Members"
+    },
+    "join": {
+      "title": "Join Us",
+      "subtitle": "Register as a volunteer and become part of our spiritual family."
+    },
+    "contact": {
+      "title": "Contact Us",
+      "subtitle": "Reach out, visit our office, or join us at the weekly satsang.",
+      "reachTitle": "Reach Us",
+      "visitTitle": "Visit Us",
+      "hoursTitle": "Satsang & Hours",
+      "followTitle": "Follow Us",
+      "mapTitle": "Find Us on the Map"
+    },
+    "terms": {
+      "title": "Terms & Conditions",
+      "subtitle": "The terms that govern your use of this website."
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "subtitle": "How we handle information on this website."
+    }
+  },
+  "forms": {
+    "join": {
+      "heading": "Volunteer Registration",
+      "fullName": "Full Name",
+      "mobile": "Mobile Number",
+      "email": "Email Address",
+      "address": "Address",
+      "occupation": "Occupation",
+      "age": "Age",
+      "interestArea": "Area of Interest",
+      "selectInterest": "Select an area",
+      "message": "Message",
+      "messagePlaceholder": "Tell us why you would like to join (optional)",
+      "submit": "Submit Registration",
+      "successTitle": "Thank you for joining!",
+      "successMessage": "Your registration has been received. Our team will reach out to you soon. Har Har Mahadev!"
+    },
+    "contact": {
+      "heading": "Send Us a Message",
+      "name": "Your Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "message": "Message",
+      "messagePlaceholder": "How can we help you?",
+      "submit": "Send Message",
+      "successTitle": "Message sent!",
+      "successMessage": "Thank you for reaching out. We will get back to you as soon as possible."
+    },
+    "common": {
+      "required": "This field is required",
+      "optional": "optional",
+      "invalidEmail": "Please enter a valid email address",
+      "invalidPhone": "Please enter a valid phone number",
+      "sending": "Sending…",
+      "sendAnother": "Send another"
+    }
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "contactTitle": "Contact",
+    "followTitle": "Follow Us",
+    "membersTitle": "Our Members",
+    "viewMap": "View on Google Maps",
+    "rights": "All rights reserved.",
+    "builtWith": "Seva · Sanskar · Sanskriti",
+    "nonPolitical": "A non-political, non-profit spiritual & charitable organization.",
+    "terms": "Terms & Conditions",
+    "privacy": "Privacy Policy",
+    "madeBy": "Designed & developed by"
+  },
+  "meta": {
+    "home": {
+      "title": "Sanatan Shiv Shakti — Spiritual & Charitable Organization, Howrah",
+      "description": "Non-political, youth-led spiritual and charitable organization in Howrah, West Bengal. Bhajan Kirtan, Sundar Kand, Gau Seva, food distribution & youth development. Join our weekly Tuesday satsang."
+    },
+    "about": {
+      "title": "About Us — Sanatan Shiv Shakti",
+      "description": "Learn about Sanatan Shiv Shakti, a youth-led spiritual and charitable organization from Ward 35, Howrah — our story, vision, mission and values."
+    },
+    "activities": {
+      "title": "Our Activities — Sanatan Shiv Shakti",
+      "description": "Bhajan Kirtan, Sundar Kand, Ramayan & Geeta Path, Gau Seva, food distribution, charity and youth development programs by Sanatan Shiv Shakti, Howrah."
+    },
+    "events": {
+      "title": "Events — Sanatan Shiv Shakti",
+      "description": "Upcoming and past spiritual and charitable events organized by Sanatan Shiv Shakti in Howrah, West Bengal."
+    },
+    "gallery": {
+      "title": "Gallery — Sanatan Shiv Shakti",
+      "description": "Photos and videos from pujas, Bhajan Kirtan, Sundar Kand, food distribution and Gau Seva by Sanatan Shiv Shakti, Howrah."
+    },
+    "certificates": {
+      "title": "Certificates & Registrations — Sanatan Shiv Shakti",
+      "description": "Official registrations and certificates of Sanatan Shiv Shakti, a charitable organization in Howrah, West Bengal."
+    },
+    "members": {
+      "title": "Our Members — Sanatan Shiv Shakti",
+      "description": "Meet the dedicated youth volunteers leading Sanatan Shiv Shakti in Howrah, West Bengal."
+    },
+    "join": {
+      "title": "Join Us — Sanatan Shiv Shakti",
+      "description": "Become a volunteer with Sanatan Shiv Shakti. Register to serve through Bhajan Kirtan, Gau Seva, food distribution and more in Howrah."
+    },
+    "contact": {
+      "title": "Contact Us — Sanatan Shiv Shakti, Shibpur, Howrah",
+      "description": "Contact Sanatan Shiv Shakti at 10 Bagdi Para Lane, Shibpur, Howrah, West Bengal 711102. Join our weekly Tuesday satsang at Ram Janki Mandir."
+    },
+    "terms": {
+      "title": "Terms & Conditions — Sanatan Shiv Shakti",
+      "description": "Terms and conditions for using the Sanatan Shiv Shakti website."
+    },
+    "privacy": {
+      "title": "Privacy Policy — Sanatan Shiv Shakti",
+      "description": "Privacy policy for the Sanatan Shiv Shakti website."
+    }
+  }
+}

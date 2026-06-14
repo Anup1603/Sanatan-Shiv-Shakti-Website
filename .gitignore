@@ -1,0 +1,33 @@
+# dependencies
+**/node_modules
+
+# next.js
+frontend/.next/
+frontend/out/
+frontend/build/
+
+# production
+build/
+
+# env files
+**/.env*
+!**/.env.example
+
+# misc
+.DS_Store
+Thumbs.db
+*.pem
+
+# debug
+**/npm-debug.log*
+**/.pnpm-debug.log*
+
+# typescript
+*.tsbuildinfo
+**/next-env.d.ts
+
+# vercel
+.vercel
+
+# AI
+.claude*
