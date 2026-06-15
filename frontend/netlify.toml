@@ -1,0 +1,25 @@
+# ============================================================================
+#  Netlify configuration — Sanatan Shiv Shakti
+# ============================================================================
+#  This file lives INSIDE the site's base directory ("frontend"), which is
+#  where Netlify looks for it when the Base directory is set to "frontend".
+#
+#  `publish = ".next"` (relative to this base) + the Next.js Runtime plugin are
+#  what make the site work: they generate the serverless functions for SSR, the
+#  locale redirect (/ -> /en), and the /api/contact & /api/join routes.
+#  Publishing a plain folder (e.g. "frontend") instead makes Netlify skip the
+#  runtime — then every route returns "Page not found".
+# ============================================================================
+
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  # Next.js 16 + the resend SDK need Node 20+. Netlify already uses 22, pinned here for safety.
+  NODE_VERSION = "22"
+
+# Netlify's official Next.js Runtime (auto-updates to support the current
+# Next.js version — do not pin it).
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
