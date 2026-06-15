@@ -12,6 +12,7 @@ Sanatan Shiv Shakti/
 │  ├─ PROJECT-BRIEF.md          (original project brief / requirements)
 │  ├─ ARCHITECTURE.md           (tech stack, structure, i18n, SEO, scalability)
 │  ├─ CONTENT-EDITING-GUIDE.md  (how to edit the website content — no coding)
+│  ├─ EMAIL-SETUP.md            (connect the forms to Gmail via Resend — setup steps)
 │  └─ ai-image-prompts/         (prompt kit for banners, posters, cards, deity images)
 └─ package.json     # root scripts that delegate to /frontend
 ```
@@ -23,6 +24,8 @@ Sanatan Shiv Shakti/
 - ✏️ **Edit content (events, gallery, members, contact…):**
   see [CONTENT-EDITING-GUIDE.md](./CONTENT-EDITING-GUIDE.md). All content lives in
   `frontend/content/` — one file per topic.
+- 📧 **Make the forms email you:** see [EMAIL-SETUP.md](./EMAIL-SETUP.md) — create a free
+  Resend key and submissions land in your Gmail.
 - 🎨 **Generate banners / posters / invitation & ID cards:**
   see [ai-image-prompts/](./ai-image-prompts/README.md).
 - 🏗️ **Understand the codebase:** [ARCHITECTURE.md](./ARCHITECTURE.md).

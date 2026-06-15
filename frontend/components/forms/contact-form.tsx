@@ -1,15 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import { CheckCircle2, Loader2, Send } from "lucide-react";
+import { AlertTriangle, CheckCircle2, Loader2, Send } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { Honeypot } from "./honeypot";
 
-type Status = "idle" | "sending" | "success";
+type Status = "idle" | "sending" | "success" | "error";
 
 export function ContactForm() {
   const t = useTranslations("forms.contact");
@@ -22,18 +23,18 @@ export function ContactForm() {
     const data = Object.fromEntries(new FormData(form));
     setStatus("sending");
 
-    // ──────────────────────────────────────────────────────────────
-    // BACKEND HOOK: replace this block with a fetch to your API / email
-    // service (e.g. Formspree, Resend, a Next.js route handler, etc.).
-    //   await fetch("/api/contact", { method: "POST", body: JSON.stringify(data) })
-    // ──────────────────────────────────────────────────────────────
-    await new Promise((r) => setTimeout(r, 700));
-    if (process.env.NODE_ENV === "development") {
-      console.info("[contact] submission (UI-only):", data);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) throw new Error("send-failed");
+      setStatus("success");
+      form.reset();
+    } catch {
+      setStatus("error");
     }
-
-    setStatus("success");
-    form.reset();
   }
 
   if (status === "success") {
@@ -47,8 +48,20 @@ export function ContactForm() {
     );
   }
 
+  if (status === "error") {
+    return (
+      <ErrorPanel
+        title={tc("errorTitle")}
+        message={tc("errorMessage")}
+        action={tc("tryAgain")}
+        onReset={() => setStatus("idle")}
+      />
+    );
+  }
+
   return (
     <form onSubmit={onSubmit} className="flex flex-col gap-4" noValidate>
+      <Honeypot />
       <Field id="c-name" label={t("name")} required>
         <Input id="c-name" name="name" autoComplete="name" required aria-required />
       </Field>
@@ -123,6 +136,31 @@ export function SuccessPanel({
     <div className="flex flex-col items-center gap-4 rounded-xl border border-primary/20 bg-primary/5 p-8 text-center">
       <span className="grid size-14 place-items-center rounded-full bg-primary/10 text-primary">
         <CheckCircle2 className="size-8" />
+      </span>
+      <h3 className="font-display text-xl font-semibold">{title}</h3>
+      <p className="max-w-md text-muted-foreground">{message}</p>
+      <Button variant="outline" onClick={onReset}>
+        {action}
+      </Button>
+    </div>
+  );
+}
+
+export function ErrorPanel({
+  title,
+  message,
+  action,
+  onReset,
+}: {
+  title: string;
+  message: string;
+  action: string;
+  onReset: () => void;
+}) {
+  return (
+    <div className="flex flex-col items-center gap-4 rounded-xl border border-destructive/20 bg-destructive/5 p-8 text-center">
+      <span className="grid size-14 place-items-center rounded-full bg-destructive/10 text-destructive">
+        <AlertTriangle className="size-8" />
       </span>
       <h3 className="font-display text-xl font-semibold">{title}</h3>
       <p className="max-w-md text-muted-foreground">{message}</p>

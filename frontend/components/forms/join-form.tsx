@@ -9,9 +9,10 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
-import { SuccessPanel } from "./contact-form";
+import { ErrorPanel, SuccessPanel } from "./contact-form";
+import { Honeypot } from "./honeypot";
 
-type Status = "idle" | "sending" | "success";
+type Status = "idle" | "sending" | "success" | "error";
 
 export function JoinForm({
   interestAreas,
@@ -28,17 +29,18 @@ export function JoinForm({
     const data = Object.fromEntries(new FormData(form));
     setStatus("sending");
 
-    // ──────────────────────────────────────────────────────────────
-    // BACKEND HOOK: wire to your API / Google Sheet / CRM here.
-    //   await fetch("/api/volunteers", { method: "POST", body: JSON.stringify(data) })
-    // ──────────────────────────────────────────────────────────────
-    await new Promise((r) => setTimeout(r, 800));
-    if (process.env.NODE_ENV === "development") {
-      console.info("[join] volunteer registration (UI-only):", data);
+    try {
+      const res = await fetch("/api/join", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) throw new Error("send-failed");
+      setStatus("success");
+      form.reset();
+    } catch {
+      setStatus("error");
     }
-
-    setStatus("success");
-    form.reset();
   }
 
   if (status === "success") {
@@ -52,8 +54,20 @@ export function JoinForm({
     );
   }
 
+  if (status === "error") {
+    return (
+      <ErrorPanel
+        title={tc("errorTitle")}
+        message={tc("errorMessage")}
+        action={tc("tryAgain")}
+        onReset={() => setStatus("idle")}
+      />
+    );
+  }
+
   return (
     <form onSubmit={onSubmit} className="flex flex-col gap-4" noValidate>
+      <Honeypot />
       <Field id="j-name" label={t("fullName")} required>
         <Input id="j-name" name="fullName" autoComplete="name" required aria-required />
       </Field>

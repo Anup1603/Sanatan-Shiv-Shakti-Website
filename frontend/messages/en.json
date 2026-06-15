@@ -214,7 +214,10 @@
       "invalidEmail": "Please enter a valid email address",
       "invalidPhone": "Please enter a valid phone number",
       "sending": "Sending…",
-      "sendAnother": "Send another"
+      "sendAnother": "Send another",
+      "errorTitle": "Something went wrong",
+      "errorMessage": "We couldn't send your message. Please try again in a moment, or email us directly.",
+      "tryAgain": "Try again"
     }
   },
   "footer": {

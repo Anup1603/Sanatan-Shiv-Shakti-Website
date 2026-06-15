@@ -27,7 +27,7 @@ components/home/   hero, weekly-activity, stats, volunteer-cta
 components/shared/ cards, gallery grid, smart-image, sacred SVGs, contact-info, …
 components/forms/  join-form, contact-form (UI-only, backend-ready)
 public/images/     stock photos (replaceable) + CREDITS.md
-middleware.ts      locale detection & routing
+proxy.ts           locale detection & routing (Next 16 renamed "middleware" → "proxy")
 ```
 
 ## Content architecture (no database)
@@ -71,11 +71,14 @@ Static prerendering of all locale pages, `next/image` optimization, CSS-animated
 (no JS gate, no flash), lazy iframes, WCAG-minded contrast, keyboard nav, alt text,
 reduced-motion support.
 
-## Forms (UI-only, backend-ready)
+## Forms → email (Resend)
 
-`components/forms/join-form.tsx` and `contact-form.tsx` validate and show success states
-but store nothing. Each has a clearly marked `BACKEND HOOK` block — drop in a
-`fetch("/api/…")` (Formspree / Resend / Google Sheet / route handler) to go live.
+The **Contact** and **Join** forms (`components/forms/*`) POST JSON to route handlers
+`app/api/contact/route.ts` and `app/api/join/route.ts`, which validate input, drop bots via
+a hidden honeypot, render a themed HTML email (`lib/email/templates.ts`) and send it to the
+org's Gmail via Resend (`lib/email/resend.ts`, `replyTo` = the submitter). Requires
+`RESEND_API_KEY` (see `docs/EMAIL-SETUP.md` and `frontend/.env.example`). Forms show
+success/error states; missing key → graceful error.
 
 ## Future scalability
 
